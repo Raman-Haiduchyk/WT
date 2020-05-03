@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,18 +32,18 @@
     {
         if ($mode)
         {
-            $style = "'color: green; text-decoration: underline;'";
+            $class = "'mobile'";
         }
         else
         {
-            $style = "'color: green;'";
+            $class = "'landLine'";
         }
         $matches = array();
         if (preg_match_all($regExp, $str, $matches) != FALSE)
         {
             foreach($matches[0] as $value)
             {
-                $str = str_replace($value, "<span style=$style>$value</span>", $str);
+                $str = str_replace($value, "<span class=$class>$value</span>", $str);
             }
             return $str;
         }
