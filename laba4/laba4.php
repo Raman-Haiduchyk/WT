@@ -30,25 +30,20 @@
 
     function replace($str, $regExp, bool $mode):string
     {
-        if ($mode)
-        {
+        if ($mode){
             $class = "'mobile'";
         }
-        else
-        {
+        else{
             $class = "'landLine'";
         }
         $matches = array();
-        if (preg_match_all($regExp, $str, $matches) != FALSE)
-        {
-            foreach($matches[0] as $value)
-            {
+        if (preg_match_all($regExp, $str, $matches) != false){
+            foreach($matches[0] as $value){
                 $str = str_replace($value, "<span class=$class>$value</span>", $str);
             }
             return $str;
         }
-        else 
-        {
+        else{
             return $str;
         }
     }
@@ -57,15 +52,12 @@
                         //(+XXX AAA)                 ((zzzzzzz) | (zzz-zz-zz))
     $landlineRegExp = "/((\(\+\d{1,3} \d{1,3}\))|(\b))((\d{7})|(\d{3}\-\d{2}\-\d{2}))(\b)/";
 
-    if (isset($_POST["user_text"]))
-    {
+    if (isset($_POST["user_text"])){
         $str = htmlentities($_POST["user_text"]);
-        $newStr = replace(replace($str, $mobileRegExp, TRUE), $landlineRegExp, FALSE);
+        $newStr = replace(replace($str, $mobileRegExp, true), $landlineRegExp, false);
         echo "<br>";
         echo $newStr;    
     }
-
-
 ?>
 
 </html>
