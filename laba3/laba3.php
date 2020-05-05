@@ -15,7 +15,7 @@
 
 <?php
 
-$pictures = array("jpeg", "png", "bmp", "jpg", "gif", "ico", "tga");
+$pictures = ['jpeg', 'png', 'bmp', 'jpg', 'gif', 'ico, 'tga'];
 
 function picInDir($dir) //проверка объема изображений в директории
 {
