@@ -15,7 +15,7 @@
 
 <?php
 
-$pictures = ['jpeg', 'png', 'bmp', 'jpg', 'gif', 'ico, 'tga'];
+const PICTURES = ['jpeg', 'png', 'bmp', 'jpg', 'gif', 'ico, 'tga'];
 
 function picInDir($dir) //проверка объема изображений в директории
 {
@@ -35,8 +35,7 @@ function picInDir($dir) //проверка объема изображений �
                 if (filetype($file) != "dir")
                 {
                     $buf = explode(".", $dirElement);
-                    global $pictures;
-                    if (in_array(strtolower(array_pop($buf)), $pictures))
+                    if (in_array(strtolower(array_pop($buf)), PICTURES))
                     {
                         $size += filesize($file);
                     }
