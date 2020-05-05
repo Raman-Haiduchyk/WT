@@ -22,7 +22,7 @@ function picInDir($dir) //проверка объема изображений �
     $size = 0;
     if($dirHandle = opendir($dir))
     {
-        if($dir[iconv_strlen($dir) - 1] != "/")
+        if ($dir[iconv_strlen($dir) - 1] !== "/") {
         {
             $dir = $dir."/";
         }
