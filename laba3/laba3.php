@@ -27,7 +27,7 @@ function picInDir($dir) //проверка объема изображений �
             $dir = $dir."/";
         }
 
-        while(($dirElement = readdir($dirHandle)) !== FALSE)
+        while ($dirElement = readdir($dirHandle)) {
         {
             if ($dirElement != "." && $dirElement != "..")
             {
